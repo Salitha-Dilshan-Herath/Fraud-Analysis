@@ -23,4 +23,36 @@ Import the libarary
 ```python
 from main import FAnalysis
 ```
+### Step 3
 
+Initait normal enviornment training
+
+```python
+from main import LearningModel
+
+test = FAnalysis("your/dataset/path", LearningModel.RANDOMFOREST, "Lable column name", "attack dataset size(0.1 to 100)")
+test.initiate()
+test.train_model()
+```
+#### Learning model type 
+- RANDOMFOREST
+- LOGISTICREGRESSION 
+
+### Step 4
+
+Generate Attack
+
+```python
+from main import Attacks
+
+test.attack(Attacks.ZOO)
+```
+### Step 5
+
+Implement Defence Method
+
+```python
+from main import Defence
+
+test.defence(Defence.ADVERSARIALTRAINING)
+```
